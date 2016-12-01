@@ -1,6 +1,7 @@
 package main;
 
 import javafx.animation.Animation;
+import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -55,15 +56,15 @@ public class AnimatedJavaLogo extends Application {
                 endX, new SimpleDoubleProperty(8));
 
         Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.25),
-                new KeyValue(startX, 190),
-                new KeyValue(endX, 150)
+                new KeyValue(startX, 190, Interpolator.EASE_BOTH),
+                new KeyValue(endX, 150, Interpolator.EASE_BOTH)
         ));
         tl1.setAutoReverse(true);
         tl1.setCycleCount(Animation.INDEFINITE);
         tl1.play();
         Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.333),
-                new KeyValue(control1X, 250),
-                new KeyValue(control2X, 150)
+                new KeyValue(control1X, 250, Interpolator.EASE_BOTH),
+                new KeyValue(control2X, 150, Interpolator.EASE_BOTH)
         ));
         tl2.setAutoReverse(true);
         tl2.setCycleCount(Animation.INDEFINITE);
@@ -84,15 +85,15 @@ public class AnimatedJavaLogo extends Application {
                 endX, new SimpleDoubleProperty(60));
 
         Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.20),
-                new KeyValue(startX, 210),
-                new KeyValue(endX, 230)
+                new KeyValue(startX, 210, Interpolator.EASE_BOTH),
+                new KeyValue(endX, 230, Interpolator.EASE_BOTH)
         ));
         tl1.setAutoReverse(true);
         tl1.setCycleCount(Animation.INDEFINITE);
         tl1.play();
         Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.1),
-                new KeyValue(control1X, 280),
-                new KeyValue(control2X, 180)
+                new KeyValue(control1X, 280, Interpolator.EASE_BOTH),
+                new KeyValue(control2X, 180, Interpolator.EASE_BOTH)
         ));
         tl2.setAutoReverse(true);
         tl2.setCycleCount(Animation.INDEFINITE);
