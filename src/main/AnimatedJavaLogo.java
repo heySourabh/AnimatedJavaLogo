@@ -40,7 +40,7 @@ public class AnimatedJavaLogo extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        ScreenshotUtility.screenshotThread(scene, 2).start();
+        //ScreenshotUtility.screenshotThread(scene, 2).start();
     }
 
     private SteamPath getFirstAnimatedSteamPath() {
