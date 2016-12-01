@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import screenshots.ScreenshotUtility;
 
 public class AnimatedJavaLogo extends Application {
 
@@ -31,19 +32,18 @@ public class AnimatedJavaLogo extends Application {
     public void start(Stage primaryStage) throws Exception {
         ImageView javaImageView = new ImageView(javaImage);
         Group group = new Group(javaImageView);
-        
-        
-        
+
         group.getChildren().add(getFirstAnimatedSteamPath());
         group.getChildren().add(getSecondAnimatedSteamPath());
-        
-        
+
         Scene scene = new Scene(group);
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+        ScreenshotUtility.screenshotThread(scene, 2).start();
     }
-    
-    private SteamPath getFirstAnimatedSteamPath() {        
+
+    private SteamPath getFirstAnimatedSteamPath() {
         SimpleDoubleProperty startX = new SimpleDoubleProperty(200);
         SimpleDoubleProperty control1X = new SimpleDoubleProperty(115);
         SimpleDoubleProperty control2X = new SimpleDoubleProperty(255);
@@ -53,26 +53,26 @@ public class AnimatedJavaLogo extends Application {
                 control1X, new SimpleDoubleProperty(80),
                 control2X, new SimpleDoubleProperty(70),
                 endX, new SimpleDoubleProperty(8));
-        
-        Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.25), 
+
+        Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.25),
                 new KeyValue(startX, 190),
                 new KeyValue(endX, 150)
         ));
         tl1.setAutoReverse(true);
         tl1.setCycleCount(Animation.INDEFINITE);
         tl1.play();
-        Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.333), 
+        Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.333),
                 new KeyValue(control1X, 250),
                 new KeyValue(control2X, 150)
         ));
         tl2.setAutoReverse(true);
         tl2.setCycleCount(Animation.INDEFINITE);
         tl2.play();
-        
+
         return firstSteamPath;
     }
-    
-    private SteamPath getSecondAnimatedSteamPath() {        
+
+    private SteamPath getSecondAnimatedSteamPath() {
         SimpleDoubleProperty startX = new SimpleDoubleProperty(230);
         SimpleDoubleProperty control1X = new SimpleDoubleProperty(145);
         SimpleDoubleProperty control2X = new SimpleDoubleProperty(285);
@@ -82,22 +82,22 @@ public class AnimatedJavaLogo extends Application {
                 control1X, new SimpleDoubleProperty(100),
                 control2X, new SimpleDoubleProperty(80),
                 endX, new SimpleDoubleProperty(60));
-        
-        Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.20), 
+
+        Timeline tl1 = new Timeline(new KeyFrame(Duration.seconds(5.20),
                 new KeyValue(startX, 210),
                 new KeyValue(endX, 230)
         ));
         tl1.setAutoReverse(true);
         tl1.setCycleCount(Animation.INDEFINITE);
         tl1.play();
-        Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.1), 
+        Timeline tl2 = new Timeline(new KeyFrame(Duration.seconds(2.1),
                 new KeyValue(control1X, 280),
                 new KeyValue(control2X, 180)
         ));
         tl2.setAutoReverse(true);
         tl2.setCycleCount(Animation.INDEFINITE);
         tl2.play();
-        
+
         return secondSteamPath;
     }
 }
