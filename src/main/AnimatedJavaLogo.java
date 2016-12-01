@@ -22,7 +22,7 @@ public class AnimatedJavaLogo extends Application {
 
     public static void main(String[] args) {
         javaImage = new Image(AnimatedJavaLogo.class
-                .getResourceAsStream("/images/java-logo-vector.png"),
+                .getResourceAsStream("/images/java-logo-vector_1.png"),
                 IMG_WIDTH, IMG_HEIGHT, true, true);
         launch(args);
     }

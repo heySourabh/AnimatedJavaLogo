@@ -34,7 +34,7 @@ public class SteamPath extends Path {
         curve2.yProperty().bind(startY);
         PathElement closePath = new ClosePath();
         this.getElements().addAll(start, curve1, curve2, closePath);
-        this.setStroke(Color.BLACK);
-        this.setFill(Color.BLUE);
+        this.setStroke(Color.web("e76f00"));
+        this.setFill(Color.web("e76f00"));
     }
 }
